@@ -1,0 +1,7 @@
+{
+    "name": " joyfest - mongodb",
+    "service" : "mongo",
+    "dockerComposeFile": "../../docker-compose.dev.yaml",
+    "workspaceFolder": "/app"
+
+}
