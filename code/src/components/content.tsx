@@ -1,5 +1,15 @@
+import styles from "../assets/css/content.module.css"
+import Header from "./header";
+import TitreSite from "./titre_website";
+
 const Content = () => {
-    return <p>hello</p>
+    return (
+        <div className={styles.content_accueil}>
+            <Header />
+            <img className={styles.fond} src='/img/festival-decibulles-2017-laurent-khram-longvixay-1-1600x900.jpg' />
+            <TitreSite />
+        </div>
+    )
 }
 
 export default Content;
