@@ -1,5 +1,13 @@
 button {
 		border-radius: 40px;
-		width: 100px;
-		background-color: rgb(237, 230, 230)
+		width: 153px;
+		height: 43;
+		color: white;
+		border: solid rgb(249, 248, 248) ;
+		background-color: transparent;
+		font-family: LatoBold;
+
+	&:hover{
+		background-color: #2B0E55 ;
+	}
 	}
