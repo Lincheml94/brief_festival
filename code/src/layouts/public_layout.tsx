@@ -1,4 +1,5 @@
 import { Outlet } from "react-router";
+import Content from "../components/content";
 // import Content from "../components/content_accueil";
 
 
@@ -10,7 +11,8 @@ const PublicLayout = () => {
 
 			{/* header */}
 			
-			{/* footer */}
+            {/* footer */}
+            <Content />
 			{/* contenu de la page enfant : outlet */}
 			<Outlet />
 		</>

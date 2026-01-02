@@ -1,6 +1,7 @@
-import "../assets/css/reset.css";
-import "../assets/css/base.css";
+// import "../assets/css/reset.css";
+// import "../assets/css/base.css";
 import { Outlet } from "react-router";
+
 
 const RootLayout = () => {
 	return (
@@ -12,7 +13,7 @@ const RootLayout = () => {
 				<title>Joyfest</title>
 			</head>
 
-			<body>
+            <body>
 				{/* outlet : zone vide qui va être remplie par un autre contenu */}
 				<Outlet />
 			</body>
