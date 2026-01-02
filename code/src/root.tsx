@@ -3,7 +3,6 @@ import viteLogo from '/vite.svg'
 import { getServerCounter, updateServerCounter } from './action.tsx'
 import reactLogo from './assets/react.svg'
 import { ClientCounter } from './client.tsx'
-
 export function Root(props: { url: URL }) {
   return (
     <html lang="en">
@@ -15,17 +14,16 @@ export function Root(props: { url: URL }) {
       </head>
       <body>
         <App {...props} />
-       
+
       </body>
     </html>
   )
 }
-
 function App(props: { url: URL }) {
   return (
     <div id="root">
       <div>
-        <a href="https://vite.dev" target="_blank">
+        <a href="https://vite.dev/" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a
@@ -54,15 +52,15 @@ function App(props: { url: URL }) {
         </li>
         <li>
           Visit{' '}
-          <a href="?__rsc" target="_blank">
-            <code>?__rsc</code>
+          <a href="?rsc" target="_blank">
+            <code>?rsc</code>
           </a>{' '}
           to view RSC stream payload.
         </li>
         <li>
           Visit{' '}
-          <a href="?__nojs" target="_blank">
-            <code>?__nojs</code>
+          <a href="?nojs" target="_blank">
+            <code>?nojs</code>
           </a>{' '}
           to test server action without js enabled.
         </li>
