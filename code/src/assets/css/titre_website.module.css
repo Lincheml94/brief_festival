@@ -1,0 +1,35 @@
+@font-face {
+	font-family: LatoBoldItallic;
+	src: url(/src/assets/font/Lato-BoldItalic.ttf);
+}
+@font-face {
+	font-family: LatoBold;
+	src: url(/src/assets/font/Lato-Bold.ttf);
+}
+
+.titre{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+
+    h1{
+        font-size: 128px;
+        font-family: LatoBoldItallic;
+        color: white;
+        margin: 0;
+    }
+
+    h2{
+        font-size: 20px;
+        background-color: #8C01E3;
+        font-family: LatoBold;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

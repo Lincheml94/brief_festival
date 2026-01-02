@@ -9,6 +9,11 @@
 }
 
 @font-face {
+	font-family: LatoBoldItallic;
+	src: url(/src/assets/font/Lato-BoldItalic.ttf);
+}
+
+@font-face {
 	font-family: BebasNeue;
 	src: url(/src/assets/font/BebasNeue-Regular.ttf);
 }
