@@ -1,0 +1,34 @@
+@font-face {
+	font-family: LatoRegular;
+	src: url(/src/assets/font/Lato-Black.ttf);
+}
+
+@font-face {
+	font-family: LatoBold;
+	src: url(/src/assets/font/Lato-Bold.ttf);
+}
+
+@font-face {
+	font-family: BebasNeue;
+	src: url(/src/assets/font/BebasNeue-Regular.ttf);
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/* variables css */
+
+/* :root {
+} */
+
+/* balises HTML */
+
+* {
+	box-sizing: border-box;
+}
+
+img {
+	width: 100%;
+}
