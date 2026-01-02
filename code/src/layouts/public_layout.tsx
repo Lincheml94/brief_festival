@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import Content from "../components/content";
+import Header from "../components/header";
 // import Content from "../components/content_accueil";
 
 
@@ -9,7 +10,7 @@ const PublicLayout = () => {
 			{/* uniquement des composants */}
 			{/* lien d'évitement */}
 
-			{/* header */}
+			<Header />
 			
             {/* footer */}
             <Content />
