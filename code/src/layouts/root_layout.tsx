@@ -1,5 +1,5 @@
-// import "../assets/css/reset.css";
-// import "../assets/css/base.css";
+import "../assets/css/bases.css";
+import "../assets/css/reset.css";
 import { Outlet } from "react-router";
 
 

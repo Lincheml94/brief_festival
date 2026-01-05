@@ -15,7 +15,7 @@ const PublicLayout = () => {
             {/* footer */}
             <Content />
 			{/* contenu de la page enfant : outlet */}
-			<Outlet />
+			{/* <Outlet /> */}
 		</>
 	);
 };

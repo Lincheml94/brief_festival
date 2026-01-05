@@ -4,5 +4,7 @@ header{
     width: 100vw;
     position: fixed;
     padding: 10px;
+    justify-content: space-between;
     top: 0;
+    padding: 40px;
 }
