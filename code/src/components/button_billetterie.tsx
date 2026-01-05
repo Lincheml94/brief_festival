@@ -7,7 +7,7 @@ const Billetterie = () => {
 			
             <button type="button">
                 
-				Billetterie
+				BILLETTERIE
 			</button>
 		</div>
 	);
