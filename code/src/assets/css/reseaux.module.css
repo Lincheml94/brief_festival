@@ -1,0 +1,18 @@
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+
+}
+ .social-icons a{
+    font-size: 1.5rem;
+    color: rgb(253, 255, 255);
+
+  }
+.social-icons a:hover svg{
+		color: #2B0E55  ;
+	}
+.icon-facebook{
+  font-size: 1.8rem;
+}
