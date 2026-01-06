@@ -1,4 +1,7 @@
+
+// import { BsGoogle } from "react-icons/bs";
 import style from "../assets/css/button.module.css";
+import { Link } from "react-router";
 
 const Newsletter = () => {
 	// const handleClick = () => {
@@ -7,10 +10,7 @@ const Newsletter = () => {
 	return (
 		<div className={style.button}>
 			{/* évenement */}
-            <button type="button">
-                {/* onClick={handleClick} */}
-				NEWSLETTER
-			</button>
+				<Link to = {"https://www.rockenseine.com/"}><p>NEWSLETTER</p></Link>
 		</div>
 	);
 };
