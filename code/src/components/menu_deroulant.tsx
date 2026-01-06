@@ -2,7 +2,7 @@
 import styles from "../assets/css/menu_deroulant.module.css"
 import { useState } from "react";
 import { NavLink } from "react-router";
-import Billetterie from "./button_billetterie";
+import ButtonMenu from "./button_menu";
 
 
 const MenuDeroulant = () => {
@@ -23,7 +23,7 @@ const MenuDeroulant = () => {
 	return (
         <div className={styles.navbar}>
             <div className={styles.icons}>
-			    <button type="button" onClick={handleClic}>menu</button>
+			    <button type="button" onClick={handleClic}><ButtonMenu /></button>
             </div>
 
 			<nav
