@@ -11,8 +11,10 @@ const Header = () => {
 				<Newsletter />
 				<Reseaux />
 			</div>
+			<div className={style.right}>
 			<Billetterie />
 			<MenuDeroulant />
+			</div>
 		</header>
 	);
 };

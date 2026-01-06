@@ -18,6 +18,16 @@ button, .button {
 		color: white;
 	}
 	
+}
 
-
+.buttonmenu{
+	width: 43px;
+	height: 43px;
+	border: 1px solid rgb(249, 248, 248);
+	background-color: white;
+	.barremenu{
+		height: 2px;
+		width: 23px;
+		background-color: #2B0E55;
 	}
+}

@@ -10,10 +10,11 @@ header{
     padding: 3rem;
     z-index: 1;
 
-    .left {
+    .left, .right {
         display: flex;
         column-gap: 2rem;
         align-items: center;
         
     }
+
 }
