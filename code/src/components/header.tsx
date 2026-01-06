@@ -6,8 +6,10 @@ import Reseaux from "./reseaux-sociaux";
 const Header = () => {
 	return (
 		<header className={style.header}>
-			<Newsletter />
-			<Reseaux />
+			<div className={style.left}>
+				<Newsletter />
+				<Reseaux />
+			</div>
 			<Billetterie />
 		</header>
 	);

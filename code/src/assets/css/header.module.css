@@ -5,7 +5,15 @@ header{
     position: fixed;
     padding: 10px;
     justify-content: space-between;
+    align-items: center;
     top: 0;
-    padding: 25px;
+    padding: 3rem;
     z-index: 1;
+
+    .left {
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+        
+    }
 }
