@@ -1,0 +1,87 @@
+
+.billeterieContainer {
+  background: linear-gradient(to bottom, #d62828, #f77f00);
+  padding: 20px;
+  margin: 0 auto;
+  font-family: 'Bebas Neue';
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 60px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 10px 0 0;
+}
+
+.datesContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.date {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.ticketsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ticket {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ticketType {
+  font-size: 25px;
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.ticketPrice {
+  font-size: 36px;
+  margin: 0 0 20px;
+  font-weight: bold;
+}
+
+.reserveButton {
+  background-color: #8C01E3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+   border-radius: 20px;
+  font-size: 16px;
+  
+  font-family: 'Bebas Neue';
+  
+}
+.ticketTypeE{
+color: black;
+font-size: 22px;
+font-weight: bold;
+margin: 0 0 20px;
+}
