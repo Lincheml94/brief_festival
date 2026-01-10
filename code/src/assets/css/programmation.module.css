@@ -1,0 +1,36 @@
+.programmationContainer {
+    background-color: #2B0E55;
+    padding: 20px;
+   justify-items: center;
+    color: white;
+}
+.programmationTitle {
+   font-size: 50px;
+    margin-bottom: 20px;
+    color: #EB7073;
+font-family: BebasNeue; 
+}
+.event {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.date {
+    font-size: 20px;
+    color: #B871FD;
+    padding: 15px;
+    font-family: LatoBoldItallic;
+}
+.artists {
+    font-size: 30px;
+    margin: 0;
+    font-family: BebasNeue;
+}
+.programButton {
+    background-color: #EB7073;
+  color: white; 
+    margin-top: 20px;
+    text-align: center;
+   
+}
+
+
