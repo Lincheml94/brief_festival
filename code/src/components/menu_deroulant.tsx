@@ -23,7 +23,7 @@ const MenuDeroulant = () => {
 	return (
         <div className={styles.navbar}>
             <div className={styles.icons}>
-			    <button type="button" onClick={handleClic}><ButtonMenu /></button>
+				<div className={styles.contenant_bouton } onClick={handleClic}><ButtonMenu /></div>
             </div>
 
 			<nav

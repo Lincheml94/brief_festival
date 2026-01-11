@@ -26,4 +26,4 @@ const Reseaux = () => {
     );
 
 };
-export default Reseaux
+export default Reseaux;

@@ -1,5 +1,6 @@
 import styles from "../assets/css/content.module.css"
 import Billeterie from "./billetterie";
+import Footer from "./footer/footer";
 import Programmation from "./Programmation";
 
 
@@ -16,7 +17,10 @@ const Content = () => {
             </div>
             <div>
                 <Billeterie />
-                </div>
+            </div>
+            <div>
+                <Footer />
+            </div>
         </div>
     )
 }
