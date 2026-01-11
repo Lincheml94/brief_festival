@@ -3,11 +3,11 @@ import style from "../assets/css/button.module.css"
 
 const ButtonMenu = () => {
   return (
-      <div className={style.buttonmenu}>
-          <div className={style.bareemenu}></div>
-          <div className={style.bareemenu}></div>
-          <div className={style.bareemenu}></div>
-    </div>
+      <button className={style.buttonmenu}>
+          <div className={style.barremenu}></div>
+          <div className={style.barremenu}></div>
+          <div className={style.barremenu}></div>
+    </button>
   )
 }
 
