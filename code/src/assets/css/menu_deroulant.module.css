@@ -32,12 +32,11 @@
     }
 }
 
-button {
+.contenant_bouton {
     z-index: 1;
-	width: 40px;
-	background: none;
+	/* width: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-style: none;
+	border-style: none; */
 }

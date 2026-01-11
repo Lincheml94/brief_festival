@@ -2,14 +2,14 @@ button, .button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-		border-radius: 40px;
-		width: 153px;
-		height: 43px;
-		color: white;
-		border: 1px solid rgb(249, 248, 248);
-		background-color: transparent;
-		font-family: LatoBold;
-		font-size: 12px; ;
+	border-radius: 40px;
+	width: 153px;
+	height: 43px;
+	color: white;
+	border: 1px solid rgb(249, 248, 248);
+	background-color: transparent;
+	font-family: LatoBold;
+	font-size: 12px; ;
 
 	&:hover{
 		background-color: #2B0E55 ;
@@ -17,5 +17,24 @@ button, .button {
 	p{
 		color: white;
 	  }
-	};
+	}
+
+	.buttonmenu{
+		width: 43px;
+		background-color: transparent;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		&:hover{
+			background-color: #2B0E55;
+		}
+		.barremenu{
+			height: 2px;
+			width: 20px;
+			background-color: white;
+			
+		}
+	}
  
