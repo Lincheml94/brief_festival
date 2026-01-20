@@ -16,7 +16,10 @@ class MySQLService {
 					namedPlaceholders: true,
 				})
 				.getConnection();
+			console.log(MySQLService.instance);
 		}
+		
+		
 		// retourner la connexion
 		return MySQLService.instance;
 	};

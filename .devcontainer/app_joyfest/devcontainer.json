@@ -1,6 +1,6 @@
 {
     "name": "joyfest - App",
-"service": "app",
+"service": "app_joyfest",
 "dockerComposeFile": "../../docker-compose.dev.yaml",
 "workspaceFolder": "/app",
 "customizations": {

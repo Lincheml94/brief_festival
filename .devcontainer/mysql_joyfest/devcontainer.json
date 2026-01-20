@@ -1,6 +1,6 @@
 {
     "name": "joyfest  - mySQL",
-"service": "mysql",
+"service": "mysql_joyfest",
 "dockerComposeFile": "../../docker-compose.dev.yaml",
 "workspaceFolder": "/app",
 "customizations": {

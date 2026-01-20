@@ -1,5 +1,5 @@
 services:
-  app:
+  app_joyfest:
     image: node:25
     volumes:
       - ./code:/app
@@ -11,7 +11,7 @@ services:
     restart: always  
     working_dir: /app
 
-  mysql:
+  mysql_joyfest:
     image: mysql:9.5
     ports:
       - 3306:3306
@@ -21,17 +21,5 @@ services:
     working_dir: /app
     restart: always
     environment: 
-      MYSQL_ROOT_PASSWORD: root 
-
-  mongo:
-    image: mongo:8.2
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-    ports:
-        - 27017:27017
-    volumes:
-        -  ./code/mongodb:/app
-        -  ./mongodb-data:/etc/mongo
-    working_dir: /app    
+      MYSQL_ROOT_PASSWORD: root
+ 
