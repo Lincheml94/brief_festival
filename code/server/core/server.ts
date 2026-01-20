@@ -1,26 +1,42 @@
-import express, { type Router, type Express, type Request, type Response } from 
-"express"; 
-class Server { 
-// instancier une application Express 
-private app: Express = express(); 
-// définir un routeur pour Express 
-private router: Router = express.Router(); 
-constructor() { 
-// lier l'application Express au routeur 
-this.app.use(this.router); 
-// définir la liste des routeurs 
-this.getRoutersList(); 
-} 
-// liste des routeurs 
-private getRoutersList = (): void => { 
-// création de la route d'accueil en GET 
-this.router.get("/api", (req: Request, res: Response): Response => { 
-return res.send("coucou"); 
-}); 
-}; 
-// créer un serveur Node.js / Express 
-public createServer = (): express.Express => { 
-return this.app; 
-}; 
-} 
+// import cors from "cors";
+import express from "express";
+import ArtistRouter from "../routeur/artist_routeur";
+import PrgrammationRouter from "../routeur/programation_routeur";
+import HomepageRouter from "../routeur/homepage_routeur";
+
+
+class Server {
+	// propriétés
+	private app = express();
+	private router = express.Router();
+
+	// constructuer
+	constructor() {
+		// integrer le middleware express JSON qui permet de recuperer le propriete body de la requte HTTB en JSONS
+
+		this.app.use(express.json());
+
+		// intrégrer le middleware Cros - cross origin resours
+		// this.app.use(cors({ origin: process.env.ORIGINS?.split(",") }));
+		// relier le routuer à l'application
+		this.app.use(this.router);
+
+		//appel des routers
+		this.routerlist();
+	}
+
+	//  méthodes
+	private routerlist = () => {
+		// créer un préfixe à touts les routes inclues dans un routeur
+		this.router.use("/api", new HomepageRouter().getRoutes());
+		this.router.use("/api/artist", new ArtistRouter().getRoutes());
+		this.router.use("/api/programmation", new PrgrammationRouter().getRoutes());
+	};
+
+	//   demarrer le serveur
+	public start = () => {
+		return this.app;
+	};
+}
+
 export default Server;
