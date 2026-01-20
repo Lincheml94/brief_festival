@@ -50,18 +50,18 @@ CREATE TABLE joyfest_dev.artist(
     video VARCHAR(150) NOT NULL
 );
 
---TICKET
+-- TICKET
 CREATE TABLE joyfest_dev.ticket(
-    id TINYINT(1)  UNSIGNED AUTO_INCREMENT,
-    name VARCHAR(15) NOT NULL UNIQUE,
+    id TINYINT(2) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
     price DECIMAL(5,2) NOT NULL 
 );
 
 -- TABLES DE JOINTURES : 
 -- programmation_artist
 CREATE TABLE joyfest_dev.programmation_artist(
-    programmation_id SMALLINT UNSIGNED NOT NULL,
-    artist_id SMALLINT UNSIGNED NOT NULL,
+    programmation_id TINYINT(2) UNSIGNED NOT NULL,
+    artist_id TINYINT(2) UNSIGNED NOT NULL,
     FOREIGN KEY (programmation_id) REFERENCES joyfest_dev.programmation(id),
     FOREIGN KEY (artist_id) REFERENCES joyfest_dev.artist(id),
     PRIMARY KEY (programmation_id, artist_id)
@@ -69,8 +69,8 @@ CREATE TABLE joyfest_dev.programmation_artist(
 
 -- user_ticket
 CREATE TABLE joyfest_dev.user_ticket(
-    user_id SMALLINT UNSIGNED NOT NULL,
-    ticket_id SMALLINT UNSIGNED NOT NULL,
+    user_id TINYINT(2) UNSIGNED NOT NULL,
+    ticket_id TINYINT(2) UNSIGNED NOT NULL,
     FOREIGN KEY (user_id) REFERENCES joyfest_dev.user(id),
     FOREIGN KEY (ticket_id) REFERENCES joyfest_dev.ticket(id),
     PRIMARY KEY (user_id, ticket_id)
