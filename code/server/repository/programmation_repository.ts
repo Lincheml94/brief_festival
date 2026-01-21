@@ -6,7 +6,7 @@ import ArtistRepository from "./artist_repository";
 class ProgrammationRepository {
     // nom la table SQL
 
-    private table = "platform";
+    private table = "programmation";
     // selectionner tout les enrehistrement
     public selectAll = async (): Promise<Programmation[] | unknown> => {
         const connection = await new MySQLService().connect();
@@ -17,12 +17,12 @@ class ProgrammationRepository {
 		SELECT ${this.table}.*,
         GROUP_CONCAT(artist.id) AS artist_ids
         FROM
-          ${process.env.MYSQL_DATABASE}.${this.table}
-          JOIN
+        ${process.env.MYSQL_DATABASE}.${this.table}
+        JOIN
         ${process.env.MYSQL_DATABASE}.artist_programmation
-          ON
-         artist_programmation.programmation_id = programmation.id
-         JOIN
+        ON
+        artist_programmation.programmation_id = programmation.id
+        JOIN
          ${process.env.MYSQL_DATABASE}.artist
          ON
          artist.id = artist_programmation.artist_id
@@ -54,34 +54,31 @@ class ProgrammationRepository {
 		// requetes preparées (utilisation des variable de requetes): la requete est exécuteé si elle ne répresente pas de risque de sécurité
 		const sql = `
 			SELECT ${this.table}.*,
-			GROUP_CONCAT(DISTINCT programmation.id) AS programmation_ids,
+			GROUP_CONCAT(DISTINCT artist.id) AS artist_ids,
 			FROM
 			${process.env.MYSQL_DATABASE}.${this.table}
 			JOIN
 			${process.env.MYSQL_DATABASE}.artist_programmation
 			ON
-			artist_programmation.artist_id = artist.id
+			artist_programmation.artist_id = programmation.id
 			JOIN
-			${process.env.MYSQL_DATABASE}.programmation
+			${process.env.MYSQL_DATABASE}.artist
 			ON 
-			programmation.id = artist_programmation.programmation_id
-          
-
+			artist.id = artist_programmation.artist_id
 			WHERE ${this.table}.id = :id
 			GROUP BY
 			${this.table}.id;
-		
 		`;
 		// try/catch exécuter la requête SQL ou récupérer une erreur
 		try {
 			const [query] = await connection.execute(sql, data);
 
 			//recupérer le premier indice d'un array
-			const result = (query as Artist[]).shift() as Artist;
+			const result = (query as Programmation[]).shift() as Programmation;
 			//clé etrangére
-			result.programmations = (await new ProgrammationRepository().selectInList(
-		    result.programmation_ids as string,
-			)) as Programmation [];
+			result.artists = (await new ArtistRepository().selectInList(
+		    result.artist_ids as string,
+			)) as Artist [];
 
 
 			// retourner les résulrtats

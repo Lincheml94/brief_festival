@@ -2,7 +2,8 @@ import type { QueryResult } from "mysql2";
 import type { Artist } from "../../modele/artist";
 import type { Programmation } from "../../modele/programmation";
 import MySQLService from "../service/mysql_service";
-import ProgrammationRepository from "./programation_repository";
+import ProgrammationRepository from "./programmation_repository";
+
 class ArtistRepository{
     private table = "artist";
     public selectAll = async (): Promise<Artist[] | unknown> => {
@@ -54,32 +55,30 @@ public selectOne = async (
 		// requetes preparées (utilisation des variable de requetes): la requete est exécuteé si elle ne répresente pas de risque de sécurité
 		const sql = `
 		SELECT ${this.table}.*,
-        GROUP_CONCAT(artist.id) AS artist_ids
+        GROUP_CONCAT(programmation.id) AS programmation_ids
         FROM
           ${process.env.MYSQL_DATABASE}.${this.table}
           JOIN
         ${process.env.MYSQL_DATABASE}.artist_programmation
           ON
-         artist_programmation.programmation_id = programmation.id
+         artist_programmation.artist_id = artist.id
          JOIN
-         ${process.env.MYSQL_DATABASE}.artist
+         ${process.env.MYSQL_DATABASE}.programmation
          ON
-         artist.id = artist_programmation.artist_id
+         programmation.id = artist_programmation.programmation_id
 		 WHERE ${this.table}.id = :id
          GROUP BY
-		 
          ${this.table}.id;
-		
 		`;
 		// try/catch exécuter la requête SQL ou récupérer une erreur
 		try {
 			const [query] = await connection.execute(sql, data);
 			//recupérer le premier indice d'un array
-			const result = (query as Programmation[]).shift() as Programmation;
+			const result = (query as Artist[]).shift() as Artist;
 
-			result.artists = (await new ArtistRepository().selectInList(
-				result.artist_ids as string,
-			)) as Artist[];
+			result.programmations = (await new ProgrammationRepository().selectInList(
+				result.programmation_ids as string,
+			)) as Programmation[];
 
 			// retourner les résulrtats
 			return result;
@@ -120,11 +119,11 @@ public selectOne = async (
 	${process.env.MYSQL_DATABASE}.${this.table}
 	VALUE
 	(
-	  NULL,
-	:name
-    :bio
-    :image
-    :video
+	  	NULL,
+		:name,
+    	:bio,
+    	:image,
+    	:video
 	)
 	;
 	`;
@@ -138,22 +137,19 @@ public selectOne = async (
 			await connection.execute(sql, data);
 			// deuxième requéte
 			sql = `SET @id = LAST_INSERT_ID();`;
-			await connection.execute(sql); // troisème requéte
+			await connection.execute(sql, data); // troisème requéte
 
 			const joinIds = (data.programmation_ids as string)
 				?.split(",")
 				.map((value) => `(@id, ${value} )`)
-
 				.join();
 
 			// console.log(joinIds);
 			sql = `
 			INSERT INTO
-	${process.env.MYSQL_DATABASE}.artist_programmation
-	VALUES
-	${joinIds}
-			
-			
+			${process.env.MYSQL_DATABASE}.artist_programmation (artist_id, programmation_id)
+			VALUES
+			${joinIds}
 			`;
 			const [query] = await connection.execute(sql);
 
@@ -167,6 +163,7 @@ public selectOne = async (
 			return error;
 		}
 	};
+
 	public update = async (
 		data: Partial<Artist>,
 	): Promise<QueryResult | unknown> => {
@@ -182,7 +179,7 @@ public selectOne = async (
 	
 	 ${this.table}.name = :name,
 	 ${this.table}.bio = :bio,
-	 ${this.table}.image =  :image,
+	 ${this.table}.image = :image,
 	 ${this.table}.video = :video
 	 WHERE 
 	 ${this.table}.id = :id
@@ -203,7 +200,6 @@ public selectOne = async (
 			const joinIds = (data.programmation_ids as string)
 				?.split(",")
 				.map((value) => `(:id, ${value} )`)
-
 				.join();
 
 			// console.log(joinIds);
@@ -246,12 +242,6 @@ public selectOne = async (
 
 			await connection.execute(sql, data);
 
-			sql = `DELETE FROM
-			${process.env.MYSQL_DATABASE}.programmation
-			WHERE
-			programmation.artist_id = :id
-			;`;
-			await connection.execute(sql, data);
 			sql = `
 				DELETE FROM
 					${process.env.MYSQL_DATABASE}.${this.table}
