@@ -58,13 +58,13 @@ CREATE TABLE joyfest_dev.ticket(
 );
 
 -- TABLES DE JOINTURES : 
--- programmation_artist
-CREATE TABLE joyfest_dev.programmation_artist(
-    programmation_id TINYINT(2) UNSIGNED NOT NULL,
+-- artist_programmation
+CREATE TABLE joyfest_dev.artist_programmation(
     artist_id TINYINT(2) UNSIGNED NOT NULL,
-    FOREIGN KEY (programmation_id) REFERENCES joyfest_dev.programmation(id),
+    programmation_id TINYINT(2) UNSIGNED NOT NULL,
     FOREIGN KEY (artist_id) REFERENCES joyfest_dev.artist(id),
-    PRIMARY KEY (programmation_id, artist_id)
+    FOREIGN KEY (programmation_id) REFERENCES joyfest_dev.programmation(id),
+    PRIMARY KEY (artist_id, programmation_id)
 );
 
 -- user_ticket
