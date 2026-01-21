@@ -13,6 +13,28 @@ class RouterService {
 
 				children: [
 					{
+						id: "admin",
+						path: "admin",
+						lazy: () => import("../layouts/admin_layout"),
+
+						children: [
+							{
+								id: "dashboard",
+								path: "",
+								index: true,
+								lazy: () => import("../pages/admin/index"),
+							},
+							{
+								id: "dashboard-artist",
+								path: ""
+							},
+							{
+							id: "artist_form",
+							path: "book_form/:id?",
+							lazy: () => import("../pages/admin/artist/admin_artist_form"),
+						},
+				]},
+					{
 						id: "public",
 						path: "",
 						lazy: () => import("../layouts/public_layout"),
