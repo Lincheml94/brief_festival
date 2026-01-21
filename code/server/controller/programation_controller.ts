@@ -1,4 +1,4 @@
-import ProgrammationRepository from "../repository/programation_repository";
+import ProgrammationRepository from "../repository/programmation_repository";
 import type { Request, Response } from "express";
 class ProgrammationController {
 	// méthode reliée à la route en GET située dans le routeur
