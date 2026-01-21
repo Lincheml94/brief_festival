@@ -25,11 +25,11 @@ class RouterService {
 								path: "",
 								lazy: () => import("../pages/index"),
 							},
-							// {
-							// 	id: "info",
-							// 	path: "info",
-							// 	lazy: () => import("../pages/info"),
-							// },
+							{
+								id: "artist",
+								path: "artist",
+								lazy: () => import("../pages/artist_details"),
+							},
 							// {
 							// 	id: "catalogue",
 							// 	path: "catalogue",

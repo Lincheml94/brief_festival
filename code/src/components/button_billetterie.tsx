@@ -8,7 +8,7 @@ const Billetterie = () => {
 			
             <div className={style.button}>
 	
-							<Link to = {"https://www.rockenseine.com/"}><p>BILLETTERIE</p></Link>
+							<Link to = {"/artist"}><p>BILLETTERIE</p></Link>
 					</div>
 		</div>
 	);
