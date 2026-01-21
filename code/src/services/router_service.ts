@@ -25,15 +25,11 @@ class RouterService {
 								lazy: () => import("../pages/admin/index"),
 							},
 							{
-								id: "dashboard-artist",
-								path: ""
+								id: "artist_form",
+								path: "book_form/:id?",
+								lazy: () => import("../pages/admin/artist/admin_artist_form"),
 							},
-							{
-							id: "artist_form",
-							path: "book_form/:id?",
-							lazy: () => import("../pages/admin/artist/admin_artist_form"),
-						},
-				]},
+					]},
 					{
 						id: "public",
 						path: "",
@@ -47,36 +43,17 @@ class RouterService {
 								path: "",
 								lazy: () => import("../pages/index"),
 							},
-							// {
-							// 	id: "info",
-							// 	path: "info",
-							// 	lazy: () => import("../pages/info"),
-							// },
-							// {
-							// 	id: "catalogue",
-							// 	path: "catalogue",
-							// 	lazy: () => import("../pages/catalogue"),
-							// },
-							// {
-							// 	id: "agenda",
-							// 	path: "agenda",
-							// 	lazy: () => import("../pages/agenda"),
-							// },
-							// {
-							// 	id: "mentions_legales",
-							// 	path: "mentions_legales",
-							// 	lazy: () => import("../pages/mentions_legales"),
-							// },
-							// {
-							// 	id: "register",
-							// 	path: "register",
-							// 	lazy: () => import("../pages/register"),
-							// },
-							// {
-							// 	id: "login",
-							// 	path: "login",
-							// 	lazy: () => import("../pages/login"),
-							// },
+							{
+								id: "artist",
+								path: "artist",
+								lazy: () => import("../pages/artist"),
+							},
+							{
+								id: "artist_details",
+								
+								path: "artists/:id",
+								lazy: () => import("../pages/artist_details"),
+							},
 						],
 					},
 				],
