@@ -3,6 +3,8 @@ import styles from "../assets/css/menu_deroulant.module.css"
 import { useState } from "react";
 import { NavLink } from "react-router";
 import ButtonMenu from "./button_menu";
+import { FaRegUserCircle } from "react-icons/fa";
+import Login from "./login";
 
 
 const MenuDeroulant = () => {
@@ -23,7 +25,7 @@ const MenuDeroulant = () => {
 	return (
         <div className={styles.navbar}>
             <div className={styles.icons}>
-				<div className={styles.contenant_bouton } onClick={handleClic}><ButtonMenu /></div>
+				<div className={styles.contenant_bouton} onClick={handleClic}><ButtonMenu /></div>
             </div>
 
 			<nav
@@ -39,6 +41,7 @@ const MenuDeroulant = () => {
 				<NavLink className={styles.list} to={"/"}>CAMPER AU FESTIVAL</NavLink>
 				<NavLink className={styles.list} to={"/"}>ATELIERS</NavLink>
 				<NavLink className={styles.list} to={"/"}>NOS PARTENAIRES</NavLink>
+				<Login />
 			</nav>
         </div>
         
