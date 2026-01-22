@@ -1,13 +1,13 @@
 import { use } from "react";
 import type { Artist } from "../../../../modele/artist";
-import type { AdminArtistParams } from "../../../models/params/admin_artist_param";
+import type * as admin_artist_param from "../../../models/params/artist_details_params";
 import ArtistAPiService from "../../../services/artist_api_service";
 import type { Programmation } from "../../../../modele/programmation";
 import ProgrammationApiService from "../../../services/programme_api_service";
 import AdminArtistFormValidator from "../../../validator/admin_artist_form_validator";
 import AdminArtistFormContent from "../../../components/admin/admin_artist_form_content";
 
-const AdminArtistForm = ({ params }: AdminArtistParams) => {
+const AdminArtistForm = ({ params }: admin_artist_param.AdminArtistParams) => {
     // récupérer la variable d'URL
     // décomposition / déconstruction d'un objet
     const { id } = params;
