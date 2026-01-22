@@ -122,5 +122,3 @@ INSERT INTO joyfest_dev.programmation (hours, date) VALUES
 ('16:00:00', '2026-07-12'),
 ('18:30:00', '2026-07-12'),
 ('21:00:00', '2026-07-12');
-
-
