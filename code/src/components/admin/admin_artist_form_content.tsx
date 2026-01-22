@@ -6,7 +6,7 @@ import type { AdminArtistFormContentProps } from "../../models/props/admin/admin
 import ArtistAPiService from "../../services/artist_api_service";
 import { useForm } from "react-hook-form";
 import type { ZodIssue } from "zod"
-
+import style from "../../assets/css/admin.artist.module.css"
 
 
 const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: AdminArtistFormContentProps) => {
@@ -130,7 +130,7 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
                 */
                 
             }
-            <form encType="multipart/form-data" onSubmit={handleSubmit(submitForm)}>
+             <form className={style.formdata} encType="multipart/form-data" onSubmit={handleSubmit(submitForm)}>
                 
             {/* NAME */}
             <p>   

@@ -24,12 +24,14 @@
     background-color: #8C01E3;
     border-radius: 30px;
     padding: 40px;
+    
 
     .list{
         font-family: BebasNeue;
         color: white;
         font-size: 44px;
     }
+
 }
 
 .contenant_bouton {
