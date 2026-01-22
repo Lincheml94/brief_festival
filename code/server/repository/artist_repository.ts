@@ -46,8 +46,8 @@ class ArtistRepository{
 		}
 	};
 public selectOne = async (
-		data: Partial<Programmation>,
-	): Promise<Programmation | unknown> => {
+		data: Partial<Artist>,
+	): Promise<Artist | unknown> => {
 		const connection = await new MySQLService().connect();
 
 		// requété SQL
@@ -55,7 +55,7 @@ public selectOne = async (
 		// requetes preparées (utilisation des variable de requetes): la requete est exécuteé si elle ne répresente pas de risque de sécurité
 		const sql = `
 		SELECT ${this.table}.*,
-        GROUP_CONCAT(programmation.id) AS programmation_ids
+        GROUP_CONCAT(DISTINCT programmation.id) AS programmation_ids
         FROM
           ${process.env.MYSQL_DATABASE}.${this.table}
           JOIN
