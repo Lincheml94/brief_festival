@@ -121,4 +121,26 @@ INSERT INTO joyfest_dev.programmation (hours, date) VALUES
 
 ('16:00:00', '2026-07-12'),
 ('18:30:00', '2026-07-12'),
+<<<<<<< HEAD
 ('21:00:00', '2026-07-12');
+=======
+('21:00:00', '2026-07-12');
+
+INSERT INTO joyfest_dev.artist_programmation (artist_id, programmation_id) VALUES
+-- Jour 1
+(1, 1), -- Sunrise Echo - 18:00
+(3, 2), -- The Joy Riders - 20:00
+(2, 3), -- DJ Luna - 22:00
+
+-- Jour 2
+(4, 4), -- Maya Bloom - 17:30
+(1, 5), -- Sunrise Echo - 19:30
+(5, 6), -- Bassline Factory - 21:30
+
+-- Jour 3
+(3, 7), -- The Joy Riders - 16:00
+(4, 8), -- Maya Bloom - 18:30
+(2, 9); -- DJ Luna - 21:00
+
+
+>>>>>>> df297a7e6c61037133f2b185e459e6e1df7712ca
