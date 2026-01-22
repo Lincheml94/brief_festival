@@ -1,0 +1,11 @@
+
+    .artist-card {
+      background-color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .artist-card-content {
+      padding: 15px;
+    }
