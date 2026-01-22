@@ -6,6 +6,7 @@ class ArtistController{
 
 public index = async (_req: Request, res: Response) => {
 		const results = await new ArtistRepository().selectAll();
+console.log(results);
 
 		if (results instanceof Error) {
 			res.status(400).json({
