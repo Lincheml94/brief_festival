@@ -1,4 +1,4 @@
-import { type ZodError, z } from "zod";
+import { z, type ZodError } from "zod";
 import type { Artist } from "../../modele/artist";
 
 class AdminArtistFormValidator{
@@ -18,23 +18,21 @@ class AdminArtistFormValidator{
                     .number()
                     .positive(),
             ]),
-            title: z
-                .string("Le titre est obligatoire")
-                .max(100, "un titre doit comporter au maximum 100 caractères"),
+            name: z
+                .string("Le nom est obligatoire")
+                .max(100, "Le nom doit comporter au maximum 100 caractères"),
         
-                
-            price: z.coerce.number()
-                .min(1, "le prix doit être de minimum 1 euro")
-                .max(999.99, "le prix doit être de maximum 999,99 euros"),
+            bio: z  
+                .string("la bio est obligatoire")
+                .max(300, "La bio doit comporter au maximum 300 caractères"),
+        
            
-            pages: z
-                .string("le nombre de pages est obligatoire")
-                .max(20, "le nombre de caractère est limité à 20"),
-            dimensions: z
-                .string("la dimension est obligatoire")
-                .max(20, "le nombre de caractère est limité à 20"),
-          
-            images: z.union([
+            image: z.union([
+                z.string("ce champ est obligatoire - zod3").nullable(),
+                z.file("ce champ est obligatoire - zod"),
+            ]),
+
+            video: z.union([
                 z.string("ce champ est obligatoire - zod3").nullable(),
                 z.file("ce champ est obligatoire - zod"),
             ]),

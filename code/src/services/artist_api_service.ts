@@ -92,7 +92,7 @@ public insert = async (data: FormData): Promise<ApiResponse<Artist>> => {
 		const results = await response.json();
 		return results;
 	};
-public delete = async (data: Artist): Promise<ApiResponse<Artist>> => {
+public delete = async (data: Partial<Artist>): Promise<ApiResponse<Artist>> => {
 		const request = new Request(
 			`${import.meta.env.VITE_API_URL}${this.prefix}`,
 			{
@@ -113,4 +113,5 @@ public delete = async (data: Artist): Promise<ApiResponse<Artist>> => {
 		return results;
 	};
 }
-export default ArtistAPiService 
+
+export default ArtistAPiService;

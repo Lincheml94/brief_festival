@@ -14,14 +14,13 @@ const AdminArtistForm = ({ params }: AdminArtistParams) => {
 
     // récupérer les données à mettre à jour
     let dataToUpdate: Artist | undefined; 
-    console.log(dataToUpdate);
 
     // si un identifiant est présent dans l'URL
     if (id) {
         // la méthode then équivaut à await : then
        dataToUpdate = use(new ArtistAPiService().selectOne(id)).data as Artist; 
     }
-    // récupérer les catégories 
+    // récupérer les données de la programmation
 
     const programmations = use(new ProgrammationApiService().selectAll()).data as Programmation[];
 
