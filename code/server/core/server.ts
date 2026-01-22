@@ -3,6 +3,7 @@ import express from "express";
 import ArtistRouter from "../routeur/artist_routeur";
 import PrgrammationRouter from "../routeur/programation_routeur";
 import HomepageRouter from "../routeur/homepage_routeur";
+import cors from 'cors';
 
 
 class Server {
@@ -17,7 +18,7 @@ class Server {
 		this.app.use(express.json());
 
 		// intrégrer le middleware Cros - cross origin resours
-		// this.app.use(cors({ origin: process.env.ORIGINS?.split(",") }));
+		this.app.use(cors({ origin: process.env.ORIGINS?.split(",") }));
 		// relier le routuer à l'application
 		this.app.use(this.router);
 

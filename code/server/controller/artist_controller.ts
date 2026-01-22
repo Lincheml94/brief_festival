@@ -1,11 +1,14 @@
 import ArtistRepository from "../repository/artist_repository";
 import type { Request, Response } from "express";
+// import FileServices from "../service/file_service";
+import type { Artist } from "../../modele/artist";
 
 
 class ArtistController{
 
 public index = async (_req: Request, res: Response) => {
 		const results = await new ArtistRepository().selectAll();
+console.log(results);
 
 		if (results instanceof Error) {
 			res.status(400).json({
@@ -49,10 +52,10 @@ public index = async (_req: Request, res: Response) => {
 
         // const file = (req.files as Express.Multer.File[]).shift() as Express.Multer.File;
 		
-        //
-        // const fileService = new FileService();
+        
+        // const fileService = new FileServices();
 
-        // 
+        
         // const fullname = await fileService.rename(file);
 	
         // req.body:recuperer les proprite body de le requete HTTP           image: fullname,
@@ -79,10 +82,10 @@ public index = async (_req: Request, res: Response) => {
 public update = async (req: Request, res: Response) => {
 		// const file = (req.files as Express.Multer.File[]).shift() as Express.Multer.File;
 		
-		 //
-		// const fileService = new FileService();
+		 
+		// const fileService = new FileServices();
 
-		// 
+		
 		// let fullname;
 
 		// if(file) 
@@ -90,7 +93,7 @@ public update = async (req: Request, res: Response) => {
 		// 	fullname = await fileService.rename(file);
 		// }
 		// else {
-		// 	fullname = (await new GameRepository().selectOne(req.body) as Game).image
+		// 	fullname = (await new ArtistRepository().selectOne(req.body) as Artist).image
 			
 		// }
 

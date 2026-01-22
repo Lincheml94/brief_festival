@@ -1,12 +1,16 @@
+"use client";
 import { useEffect, useId, useState } from "react";
 import { useNavigate } from "react-router";
 import type { Artist } from "../../../modele/artist";
 import type { AdminArtistFormContentProps } from "../../models/props/admin/admin_artist_form_content_props";
 import ArtistAPiService from "../../services/artist_api_service";
+import { useForm } from "react-hook-form";
+import type { ZodIssue } from "zod"
+
 
 
 const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: AdminArtistFormContentProps) => {
-    // créer de identifiants pour chaque champs de formulaire
+//     // créer de identifiants pour chaque champs de formulaire
     const idId = useId();
     const nameId = useId();
     const bioId = useId();
@@ -40,8 +44,7 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
             // normaliser les données saisies : se base sur les données testées dans flashport pour que les données (pour les cases à cocher)
             const normalizeData = {
                 ...dataToUpdate,
-                category_ids: (dataToUpdate.programmation_ids as string).split(","),
-               
+                programmation_ids: (dataToUpdate.programmation_ids as string).split(","),
             };
             reset(normalizeData);
         }
@@ -55,15 +58,11 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
         // normaliser les données saisies : se base sur les données testées dans flashport pour que les données
         const normalizeData = {
 
-            
             ...data,
-            category_ids: (data.programmation_ids as unknown as string[]).join(),
-           
-            // images: (data.images as string)[0],
-
+            programmation_ids: (data.programmation_ids as unknown as string[]).join(),
+            image: (data.image as string)[0],
         };
-        
-    
+
         // validation de la saisie avec le validateur côté serveur
         const validation = await validator(normalizeData);
         // console.log(validation);
@@ -106,7 +105,7 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
         // use navigate : hook qui permet de naviguer
         if ([200, 201].indexOf(process.status) !== -1) {
             // redirection
-            navigate("/admin/artist");
+            navigate("/admin");
         } else if ([400].indexOf(process.status) !== -1) {
             // afficher un message
             setMessage(process.message as unknown as string);
@@ -115,7 +114,7 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
 
      return <>
         <div>
-            <h2>Gérer les livres</h2>
+            <h2>Gérer les artistes</h2>
             {/* afficher le message (type de condition supportée par le html) 
                 Si le message existe, l'afficher, sinon, rien de s'affiche
             */}
@@ -135,11 +134,11 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
                 
             {/* NAME */}
             <p>   
-            <label htmlFor={nameId}>Titre</label>
+            <label htmlFor={nameId}>Nom de l'artiste</label>
                     <input type="text"
                         id={nameId}
                         {...register('name', {
-                            required: "Le titre est obligatoire",
+                            required: "Le nom est obligatoire",
                             maxLength: { value: 100, message: "Le nom doit comporter au maximum 100 caractères" }
                         })} />
 
@@ -150,9 +149,9 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
                 {/* BIO */}
                 <p>
             <label htmlFor={bioId}>Bio de l'artiste</label>
-                    <input type="number" step="0.01" id={bioId} {...register('bio', {
+                    <textarea id={bioId} {...register('bio', {
                         required: "la bio est obligatoire",
-                        maxLength: { value: 100, message: "Le nom doit comporter au maximum 100 caractères" }
+                        maxLength: { value: 300, message: "La bio doit comporter au maximum 300 caractères" }
                  
                     })} />
                 </p> 
@@ -161,7 +160,7 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
                 {/* IMAGE */}
                 <p>
             <label htmlFor={imageId}>Charger une image</label>
-                    <input type="number" step="0.01" id={bioId} {...register('image', {
+                    <input type="text" id={bioId} {...register('image', {
                         required: "la bio est obligatoire",
                         maxLength: { value: 100, message: "Le nom doit comporter au maximum 100 caractères" }
                  
@@ -171,14 +170,42 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
 
                 {/* VIDEO */}
                 <p>
-            <label htmlFor={bioId}>Charger une vidéo</label>
-                    <input type="number" step="0.01" id={videoId} {...register('video', {
-                        required: "la bio est obligatoire",
+            <label htmlFor={videoId}>Charger une vidéo</label>
+                    <input type="text" id={videoId} {...register('video', {
+                        required: "la video est obligatoire",
                         maxLength: { value: 100, message: "Le nom doit comporter au maximum 100 caractères" }
                  
                     })} />
                 </p> 
                  <p role="alert">{errors.video?.message ?? serverErrors?.video}</p>
+
+                 {/* ID HIDDEN */}
+                <input type="hidden" id={idId} {...register('id')}/>
+            
+
+            {/* PROGRAMMATION  */}
+            <div>
+                <p>Programmation :</p>
+                {
+                    programmations.map((item) => {
+                        return (
+                            <div key={item.id}>
+                                <input type="checkbox" value={item.id} id={item.id as unknown as string}
+                                    
+                                    {...register("programmation_ids", {
+                                        required: "cochez au moins une case",
+
+                                    })} />
+                                
+                                <label>date :{item.date} </label>
+                                <label>heure : {item.hours}</label>
+                                <p role="alert">{ errors.programmation_ids?.message ?? serverErrors?.programmation_ids}</p>
+                            </div>
+                        )
+                    })
+                }
+                 </div>
+                  <button type="submit">Créer</button>
 
                
              </form>

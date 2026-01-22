@@ -121,6 +121,9 @@ INSERT INTO joyfest_dev.programmation (hours, date) VALUES
 
 ('16:00:00', '2026-07-12'),
 ('18:30:00', '2026-07-12'),
+<<<<<<< HEAD
+('21:00:00', '2026-07-12');
+=======
 ('21:00:00', '2026-07-12');
 
 INSERT INTO joyfest_dev.artist_programmation (artist_id, programmation_id) VALUES
@@ -140,3 +143,4 @@ INSERT INTO joyfest_dev.artist_programmation (artist_id, programmation_id) VALUE
 (2, 9); -- DJ Luna - 21:00
 
 
+>>>>>>> df297a7e6c61037133f2b185e459e6e1df7712ca
