@@ -8,8 +8,8 @@ const ArtistList = ({ data }: ArtistListItemProps) => {
     return (
         <>
          {data.map(item => (
-         <div className="artist-card">
-            <Link to={`/artist/${item.id}${item.bio}${item.image}`} className="artist-card-link">
+             <div className="artist-card">
+            <Link to={`/artist/${item.id}`} className="artist-card-link">
                 <div className="artist-card-content">
                  <h3>{item.name}</h3>
                   </div>

@@ -4,6 +4,7 @@ const ArtistDetails = ({ data }: ArtistDetailsContentProps) => {
 	return (
 		<article>
 			<h2> {data.name}</h2>
+			<h3>{ data.bio}</h3>
 		</article>
 	);
 };
