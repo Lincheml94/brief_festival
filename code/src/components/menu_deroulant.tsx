@@ -42,7 +42,6 @@ const MenuDeroulant = () => {
 				<NavLink className={styles.list} to={"/"}>CAMPER AU FESTIVAL</NavLink>
 				<NavLink className={styles.list} to={"/"}>ATELIERS</NavLink>
 				<NavLink className={styles.list} to={"/"}>NOS PARTENAIRES</NavLink>
-				<Reseaux />
 				
 			</nav>
         </div>

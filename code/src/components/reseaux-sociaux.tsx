@@ -5,10 +5,10 @@ import { RiTiktokLine } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import style from "../assets/css/reseaux.module.css"
 
-const Reseaux = () => {
+const Reseaux = ({displayMobile}:{displayMobile?:boolean}) => {
     return (
 
-        <div className={`${style["social-icons"]} ${style["social-in-menu"]}`}>
+        <div className={`${style["social-icons"]} ${displayMobile ? style["social-in-menu"] : '' }`}>
            <a href="http://https://www.instagram.com/">
                 <FaInstagram />
             </a>
