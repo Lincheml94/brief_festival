@@ -1,4 +1,4 @@
-.container{
+.container:has(.artist-card){
  background: linear-gradient(to bottom, #17035e, #f77f00);
     justify-content: center;
     height: 100vh;
