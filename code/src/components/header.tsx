@@ -10,7 +10,7 @@ const Header = () => {
 	return (
 		<header className={style.header}>
 			<div className={style.left}>
-				<Newsletter />
+				<Newsletter displayFooter={ false }/>
 				<Reseaux />
 			</div>
 			<div className={style.right}>
