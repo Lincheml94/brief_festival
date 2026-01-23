@@ -10,7 +10,7 @@ const Newsletter = ({displayFooter}:{displayFooter?:boolean}) => {
 	return (
 		<div className={`${style.button} ${style.buttonnewsletter} ${displayFooter ? style["buttonnewsletter-footer"] : '' }`}>
 			{/* évenement */}
-				<Link to = {"https://www.rockenseine.com/"}><p>NEWSLETTER</p></Link>
+				<Link to = {""}><p>NEWSLETTER</p></Link>
 		</div>
 	);
 };

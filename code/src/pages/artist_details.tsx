@@ -1,5 +1,5 @@
 import type { Artist } from "../../modele/artist";
-import ArtistDetailsContent from "../components/artist_details_content";
+import ArtistDetailsContent from "../components/artist_details_content.tsx";
 import Seo from "../components/seo";
 import type { ArtistDetailsParams } from "../models/params/artist_details_params";
 import ArtistAPiService from "../services/artist_api_service";
