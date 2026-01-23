@@ -8,7 +8,7 @@ const Newsletter = () => {
 	// 	console.log("clic");
 	// };
 	return (
-		<div className={style.button}>
+		<div className={`${style.button} ${style.buttonnewsletter}`}>
 			{/* évenement */}
 				<Link to = {"https://www.rockenseine.com/"}><p>NEWSLETTER</p></Link>
 		</div>

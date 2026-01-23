@@ -5,6 +5,7 @@ import { NavLink } from "react-router";
 import ButtonMenu from "./button_menu";
 import { FaRegUserCircle } from "react-icons/fa";
 import Login from "./login";
+import Reseaux from "./reseaux-sociaux";
 
 
 const MenuDeroulant = () => {
@@ -41,7 +42,8 @@ const MenuDeroulant = () => {
 				<NavLink className={styles.list} to={"/"}>CAMPER AU FESTIVAL</NavLink>
 				<NavLink className={styles.list} to={"/"}>ATELIERS</NavLink>
 				<NavLink className={styles.list} to={"/"}>NOS PARTENAIRES</NavLink>
-				<Login />
+				<Reseaux />
+				
 			</nav>
         </div>
         

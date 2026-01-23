@@ -1,0 +1,54 @@
+.artist_form{
+    width: 100vw;
+    height: 100%;
+    gap: 20px;
+    p{
+        font-family: LatoBold;
+       
+
+    }
+    .titredashboard{
+
+    }
+    button {
+        display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px;
+	width: 153px;
+	height: 43px;
+	color: white;
+	border: 1px solid rgb(249, 248, 248);
+	background-color: #B871FD;
+	font-family: LatoBold;
+	font-size: 12px; ;
+
+	&:hover{
+		background-color: #2B0E55 ;
+	}
+	p{
+		color: white;
+	  }
+	}
+
+    }
+
+    .artistcrud{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding: 20px;
+
+        .buttoncrud{
+            display: flex;
+            
+            ;
+        }
+    }
+
+    .formdata{
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }

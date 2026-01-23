@@ -16,3 +16,10 @@
 .icon-facebook{
   font-size: 1.8rem;
 }
+
+@media only screen and (max-width: 700px) {
+			.social-icons {
+        display: none;
+      }
+	}
+	

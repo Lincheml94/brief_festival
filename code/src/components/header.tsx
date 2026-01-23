@@ -3,6 +3,8 @@ import Billetterie from "./button_billetterie";
 import Newsletter from "./button_newsletter";
 import Reseaux from "./reseaux-sociaux";
 import MenuDeroulant from "./menu_deroulant";
+import { IoTicketOutline } from "react-icons/io5";
+import Login from "./login";
 
 const Header = () => {
 	return (
@@ -12,7 +14,9 @@ const Header = () => {
 				<Reseaux />
 			</div>
 			<div className={style.right}>
-			<Billetterie />
+				<Login />
+				<Billetterie />
+				<IoTicketOutline className={style.ticket}/>
 			<MenuDeroulant />
 			</div>
 		</header>

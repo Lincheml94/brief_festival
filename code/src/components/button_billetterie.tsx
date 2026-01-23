@@ -4,7 +4,7 @@ import style from "../assets/css/button.module.css";
 const Billetterie = () => {
 	
 	return (
-		<div className={style.button}>
+		<div className={`${style.button} ${style.buttonbilletterie}`}>
 			
             <div className={style.button}>
 	
