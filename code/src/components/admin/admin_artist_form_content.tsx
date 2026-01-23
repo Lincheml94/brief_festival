@@ -205,7 +205,7 @@ const AdminArtistFormContent = ({ programmations, validator, dataToUpdate }: Adm
                     })
                 }
                  </div>
-                  <button type="submit">Créer</button>
+                  <button className={style.buttoncrud} type="submit">Créer</button>
 
                
              </form>

@@ -26,9 +26,12 @@
 
 .datesContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 30px;
   flex-wrap: wrap;
+}
+.datesContainertrois{
+  display: flex;
 }
 
 .date {
@@ -52,7 +55,11 @@
   border-radius: 10px;
   padding: 20px;
   width: 200px;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -84,4 +91,18 @@ color: black;
 font-size: 22px;
 font-weight: bold;
 margin: 0 0 20px;
+}
+
+@media only screen and (max-width: 1100px) {
+
+.ticketsContainer {
+  
+  justify-content:center;
+  
+}
+
+  .ticket {
+    width:300px;
+    height: 300px;
+}
 }

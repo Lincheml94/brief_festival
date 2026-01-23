@@ -10,12 +10,16 @@ const Billeterie = () => {
       </div>
 
       <div className={styles.datesContainer}>
-        <div className={styles.date}>MERCREDI 17 JUIN</div>
-        <div className={styles.date}>JEUDI 18 JUIN</div>
-        <div className={styles.date}>VENDREDI 19 JUIN</div>
-        <div className={styles.date}>SAMEDI 20 JUIN</div>
-        <div className={styles.date}>DIMANCHE 21 JUIN</div>
-        <div className={styles.date}>FORFAIT 2/3/4 JOURS</div>
+          <div className={styles.datesContainertrois}>
+            <div className={styles.date}>MERCREDI 17 JUIN</div>
+            <div className={styles.date}>JEUDI 18 JUIN</div>
+            <div className={styles.date}>VENDREDI 19 JUIN</div>
+        </div>
+        <div className={styles.datesContainertrois}>
+            <div className={styles.date}>SAMEDI 20 JUIN</div>
+            <div className={styles.date}>DIMANCHE 21 JUIN</div>
+            <div className={styles.date}>FORFAIT 2/3/4 JOURS</div>
+        </div>
       </div>
 
       <div className={styles.ticketsContainer}>
