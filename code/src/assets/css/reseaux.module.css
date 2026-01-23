@@ -21,5 +21,9 @@
 			.social-icons {
         display: none;
       }
+
+      .social-in-menu{
+        display: flex;
+      }
 	}
 	

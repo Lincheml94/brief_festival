@@ -11,8 +11,8 @@ const Footer = () => {
         <footer>
             <Sponsor />
             <TitreFooter />
-            <Newsletter />
-            <Reseaux />
+            <Newsletter displayFooter={ true }/>
+            <Reseaux displayMobile={ true } />
             <FooterFooter />
         </footer>
     

@@ -5,12 +5,15 @@ import Reseaux from "./reseaux-sociaux";
 import MenuDeroulant from "./menu_deroulant";
 import { IoTicketOutline } from "react-icons/io5";
 import Login from "./login";
+import { FaHouse } from "react-icons/fa6";
+import { NavLink } from "react-router";
 
 const Header = () => {
 	return (
 		<header className={style.header}>
 			<div className={style.left}>
-				<Newsletter />
+				<NavLink to={"/"}><FaHouse className={style.house}/></NavLink>
+				<Newsletter displayFooter={ false }/>
 				<Reseaux />
 			</div>
 			<div className={style.right}>
