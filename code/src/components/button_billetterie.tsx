@@ -8,7 +8,7 @@ const Billetterie = () => {
 			
             <div className={style.button}>
 	
-							<Link to = {"/artist"}><p>BILLETTERIE</p></Link>
+							<Link to={""}><p>BILLETTERIE</p></Link>
 					</div>
 		</div>
 	);

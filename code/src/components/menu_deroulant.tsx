@@ -21,6 +21,8 @@ const MenuDeroulant = () => {
 		//  ! : négation, donc !navMobileSIsVisible : on va aller chercher la valeur contraire du boolean
 		setnavMobileSIsVisible(!navMobileSIsVisible);
 		// console.log(navMobileSIsVisible);
+		
+		
 	};
 
 	return (
@@ -33,15 +35,15 @@ const MenuDeroulant = () => {
 				className={`${styles.menu} ${navMobileSIsVisible ? styles["navbar-mobile-visible"] : ""}`}
             >
                 
-				<NavLink className={styles.list} to={"/"}>PROGRAMMATION 2026</NavLink>
-				<NavLink className={styles.list} to={"/artist"}>BILLETTERIE</NavLink>
-				<NavLink className={styles.list} to={"/"}>INFOS PRATIQUES</NavLink>
-				<NavLink className={styles.list} to={"/"}>LE FESTIVAL</NavLink>
-				<NavLink className={styles.list} to={"/"}>ACCESSIBILITE</NavLink>
-				<NavLink className={styles.list} to={"/"}>FOODTRUCKS</NavLink>
-				<NavLink className={styles.list} to={"/"}>CAMPER AU FESTIVAL</NavLink>
-				<NavLink className={styles.list} to={"/"}>ATELIERS</NavLink>
-				<NavLink className={styles.list} to={"/"}>NOS PARTENAIRES</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>PROGRAMMATION 2026</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>BILLETTERIE</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/artist"}>ARTISTES</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>INFOS PRATIQUES</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>LE FESTIVAL</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>ACCESSIBILITE</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>FOODTRUCKS</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>ATELIERS</NavLink>
+				<NavLink className={styles.list} onClick={handleClic} to={"/"}>NOS PARTENAIRES</NavLink>
 				<Reseaux />
 				
 			</nav>
