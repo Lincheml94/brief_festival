@@ -12,15 +12,11 @@ const Content = () => {
            
             <img className={styles.fond} src='/img/festival-decibulles-2017-laurent-khram-longvixay-1-1600x900.jpg' />
             <TitreSite />
-            <div>
+            
              <Programmation />
-            </div>
-            <div>
+            
                 <Billeterie />
-            </div>
-            <div>
-                <Footer />
-            </div>
+
         </div>
     )
 }
