@@ -1,0 +1,39 @@
+.container{
+ background: linear-gradient(to bottom, #17035e, #f77f00);
+    justify-content: center;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 10px;
+   
+}
+    .artist-card {
+      display: flex;
+     justify-content: center;
+      border-radius: 11px;
+      margin: 10px;
+      padding: 10px; 
+    }
+
+    .artist-card-content {
+      font-size: 1.5rem;
+     background: linear-gradient(to bottom,#905516, #3c0de5);
+     border-radius: 11px;
+      margin: 10px;
+      padding: 20px;
+      color: rgb(236, 211, 211);
+    }
+
+
+
+
+    
+@media screen and (max-width : 768px){
+    .artist-card-content {
+        font-size: 1.2rem;
+        padding: 10px; 
+    }
+
+    .artist-card {
+        max-width: 100%;
+    }
+}

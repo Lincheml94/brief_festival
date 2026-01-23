@@ -1,6 +1,6 @@
 import type { Artist } from "../../../modele/artist";
 
 type ArtistListItemProps = {
-	data: Artist;
+	data: Artist [];
 };
 export type { ArtistListItemProps };

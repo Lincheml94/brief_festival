@@ -51,6 +51,11 @@ class RouterService {
 							{
 								id: "artist",
 								path: "artist",
+								lazy: () => import("../pages/artists"),
+							},
+							{
+								id: "artist_details",
+								path: "artist/:id",
 								lazy: () => import("../pages/artist_details"),
 							},
 							// {
